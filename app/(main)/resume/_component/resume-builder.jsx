@@ -110,7 +110,7 @@ const ResumeBuilder = ({ initialContent }) => {
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
             }
-               await html2pdf().set(opt).from(element).save();
+               //await html2pdf().set(opt).from(element).save();
         } catch (error) {
             console.error("Failed to generate PDF", error);
         } finally {
