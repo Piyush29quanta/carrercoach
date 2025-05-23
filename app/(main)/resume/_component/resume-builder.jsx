@@ -15,7 +15,7 @@ import EntryForm from "./entry-form";
 import { entriesToMarkdown } from "@/app/lib/helper";
 import MDEditor from "@uiw/react-md-editor";
 import { useUser } from "@clerk/nextjs";
-//import html2pdf from 'html2pdf';
+
 
 
 
@@ -99,24 +99,16 @@ const ResumeBuilder = ({ initialContent }) => {
     const onSubmit = async (data) => { };
 
     const generatePDF = async () => {
-        setIsGenerating(true);
-        try {
+    setIsGenerating(true);
+    try {
+        console.log("PDF generation is disabled.");
+    } catch (error) {
+        console.error("Failed to generate PDF", error);
+    } finally {
+        setIsGenerating(false);
+    }
+};
 
-            const element = document.getElementById("resume-pdf");
-            const opt = {
-                margin: [15, 15],
-                filename: 'resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            }
-               //await html2pdf().set(opt).from(element).save();
-        } catch (error) {
-            console.error("Failed to generate PDF", error);
-        } finally {
-            setIsGenerating(false);
-        }
-    };
 
     return (
         <div className="space-y-4">
