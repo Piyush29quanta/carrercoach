@@ -15,9 +15,9 @@ import EntryForm from "./entry-form";
 import { entriesToMarkdown } from "@/app/lib/helper";
 import MDEditor from "@uiw/react-md-editor";
 import { useUser } from "@clerk/nextjs";
-import html2pdf from 'html2pdf';
+//import html2pdf from 'html2pdf';
 
-//const html2pdf = () => import('html2pdf.js');
+
 
 const ResumeBuilder = ({ initialContent }) => {
     const [activeTab, setActiveTab] = useState("edit");
